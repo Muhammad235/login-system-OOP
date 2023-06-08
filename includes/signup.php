@@ -9,11 +9,15 @@ if (isset($_POST['submit']))
     $confirmpassword = $_POST['confirmpassword'];
 
     // Instantiate SignupContoller class 
-    include '../classes/signupupcontroller.php';
-
-    // Running error handlers and user signup
+    include '../classes/dbh.php';
+    include '../classes/signup.classes.php';
+    include '../classes/signupcontroller.php';
     $signup = new SignupController($username, $email, $password, $confirmpassword);
 
+    // Running error handlers and user signup
+    $signup->signupUser();
+
     // Going back frontpage
+    header("location: ../signup.html");
 }
 

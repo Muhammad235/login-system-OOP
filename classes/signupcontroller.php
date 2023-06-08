@@ -17,27 +17,27 @@ class SignupController extends Signup{
    public function signupUser(){
       if ($this->emptyInput() == false) {
            //emptyinput
-           header("location: ../index.php?eror=emptyinput");
+           header("location: ../signup.html?eror=emptyinput");
            exit();
       }
       if ($this->validateUsername() == false) {
          //invalidusername
-         header("location: ../index.php?eror=invalidusername");
+         header("location: ../signup.html?eror=invalidusername");
          exit();
       }
       if ($this->validateEmail() == false) {
         //invalidemail
-        header("location: ../index.php?eror=invalidemail");
+        header("location: ../signup.html?eror=invalidemail");
         exit();
       }
       if ($this->pwdmatch() == false) {
         //invalidpassword
-        header("location: ../index.php?eror=invalidpassword");
+        header("location: ../signup.html?eror=invalidpassword");
         exit();
       }
       if ($this->email_username_check() == false) {
         //usernameoremailtaken
-        header("location: ../index.php?eror=usernameoremailtaken");
+        header("location: ../signup.html?eror=usernameoremailtaken");
         exit();
       }
 
